@@ -2,79 +2,49 @@
   .igs-presentation-wrapper
     .igs-presentation.igs-presentation-screen(:class="`igs-breakpoint-${currentBreakpoint.index}`", ref='presentation')
       appBackground
+      appSvg.igs-svg-cover(src="svg/breakpoint-cover.svg")
+      appSvg.igs-svg-power-supply(src="svg/power-supply.svg")
+      appSvg.igs-presentation-svg.igs-svg-fusivel(src="svg/fusivel.svg")
+      appSvg.igs-presentation-svg.igs-svg-fusivel(src="svg/fusivel.svg")
+      appSvg.igs-presentation-svg.igs-svg-voltimetro(src="svg/voltimetro.svg")
+      appSvg.igs-presentation-svg.igs-svg-pcb1(src="svg/pcb1.svg")
+      appSvg.igs-presentation-svg.igs-svg-pcb2(src="svg/pcb2.svg")
+      appSvg.igs-presentation-svg.igs-svg-agradecimentos(src="svg/agradecimentos.svg")
+      appSvg.igs-presentation-svg.igs-svg-problemas(src="svg/problemas.svg")
+      appSvg.igs-presentation-svg.igs-svg-fonte(src="svg/fonte.svg")
+      appSvg.igs-presentation-svg.igs-svg-placa(src="svg/placa.svg")
+      appSvg.igs-presentation-svg.igs-svg-protoboard(src="svg/protoboard.svg")
+      appSvg.igs-presentation-svg.igs-svg-ampop(src="svg/ampop.svg")
+      appCircuit(ref='circuit5v' wiresSrc="svg/5v_wire.svg", componentsSrc="svg/5v.svg")
+      appCircuit(ref='circuitRetificacao' wiresSrc="svg/reticacao_wire.svg", componentsSrc="svg/reticacao.svg")
+      appCircuit(ref='circuitTensao' wiresSrc="svg/tensao_wire.svg", componentsSrc="svg/tensao.svg")
+      appCircuit(ref='circuitCorrente' wiresSrc="svg/corrente_wire.svg", componentsSrc="svg/corrente.svg")
+      appCircuit(ref='circuitPic' wiresSrc="svg/pic_wire.svg", componentsSrc="svg/pic.svg")
+      appCircuit(ref='circuitDisplays' wiresSrc="svg/displays_wire.svg", componentsSrc="svg/displays.svg")
+      appCircuit(ref='circuitTransformador' wiresSrc="svg/transformador_wire.svg", componentsSrc="svg/transformador.svg")
+      appSvg.igs-presentation-svg.igs-svg-transformador(src="svg/transformador.svg")
+      appSvg.igs-presentation-svg.igs-svg-title(src="svg/title.svg")
       appTitle
-      appMembers
-      appComparisonHistory(:currentBreakpoint="currentBreakpoint")
       appBreakpointLabel(:currentBreakpoint="currentBreakpoint")
-      appPhotoProsAndCons(:currentBreakpoint="currentBreakpoint")
-      appPhotoHarvey(:currentBreakpoint="currentBreakpoint")
-      appPhotoFruin(:currentBreakpoint="currentBreakpoint")
-      appPhotoContext(:currentBreakpoint="currentBreakpoint")
-      appPhotoNewHistory(:currentBreakpoint="currentBreakpoint")
-      appPhotoExplication(:currentBreakpoint="currentBreakpoint")
-      appPhotoSynthesis(:currentBreakpoint="currentBreakpoint")
-      appPhotoDefinition(:currentBreakpoint="currentBreakpoint")
-      appPhotoSource(:currentBreakpoint="currentBreakpoint")
-      appBreakpointNumber(:currentBreakpoint="currentBreakpoint")
-      appTopics.igs-presentation-topics(ref='topics', :topics="currentBreakpoint.topics")
-      appQuoteCardMentality
     .igs-presentation.igs-presentation-print(v-for="breakpoint in printBreakpoints", :class="`igs-breakpoint-${breakpoint.index}`")
       appBackground
       appTitle
-      appMembers
-      appComparisonHistory(:currentBreakpoint="breakpoint", :enabledTransition="false")
       appBreakpointLabel(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoHarvey(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoFruin(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoContext(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoProsAndCons(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoExplication(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoSynthesis(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoNewHistory(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoDefinition(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appPhotoSource(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appBreakpointNumber(:currentBreakpoint="breakpoint", :enabledTransition="false")
-      appTopics.igs-presentation-topics(:topics="breakpoint.topics")
-      appQuoteCardMentality
 </template>
 
 <script>
 import appBackground from '@/components/background.vue'
 import appTitle from '@/components/presentation-title.vue'
-import appMembers from '@/components/members.vue'
+import appCircuit from '@/components/circuit.vue'
 import appBreakpointLabel from '@/components/breakpoint-label.vue'
-import appPhotoHarvey from '@/components/photo-james-harvey.vue'
-import appPhotoContext from '@/components/photo-context.vue'
-import appPhotoFruin from '@/components/photo-robert-fruin.vue'
-import appPhotoSource from '@/components/photo-source.vue'
-import appPhotoSynthesis from '@/components/photo-synthesis.vue'
-import appPhotoExplication from '@/components/photo-explication.vue'
-import appPhotoNewHistory from '@/components/photo-new-history.vue'
-import appPhotoProsAndCons from '@/components/photo-pros-and-cons.vue'
-import appPhotoDefinition from '@/components/photo-definition.vue'
-import appBreakpointNumber from '@/components/breakpoint-number.vue'
-import appTopics from '@/components/topics.vue'
-import appComparisonHistory from '@/components/comparison-history.vue'
-import appQuoteCardMentality from '@/components/quote-card-mentality.vue'
+import appSvg from '@/components/svg.vue'
 export default {
   components: {
     appBackground,
     appTitle,
-    appBreakpointLabel,
-    appTopics,
-    appMembers,
-    appPhotoDefinition,
-    appPhotoHarvey,
-    appPhotoContext,
-    appPhotoExplication,
-    appPhotoNewHistory,
-    appPhotoSynthesis,
-    appPhotoSource,
-    appPhotoProsAndCons,
-    appPhotoFruin,
-    appComparisonHistory,
-    appQuoteCardMentality,
-    appBreakpointNumber
+    appCircuit,
+    appSvg,
+    appBreakpointLabel
   },
   props: {
     currentBreakpoint: {
@@ -100,26 +70,130 @@ export default {
   },
   mounted () {
     this.$root.$on('breakpoint-change', (breakpoint) => {
-      this.$refs.topics.topicsChange()(breakpoint.topics)
+      if (this.$refs[this.currentBreakpoint.index]) {
+        this.$refs[this.currentBreakpoint.index].setDisable()
+      }
+      if (this.$refs[breakpoint.index]) {
+        this.$refs[breakpoint.index].setEnable()
+      }
+      if (breakpoint.index === 'cover') {
+        this.powerSupplyAnimationInteval = this.powerSupplyAnimation()
+      } else {
+        clearInterval(this.powerSupplyAnimationInteval)
+      }
     })
   },
   methods: {
+    powerSupplyAnimation () {
+      const currentTextElement = document.querySelector('tspan[data-powersupply="current"]')
+      const currentTextShadowElement = document.querySelector('tspan[data-powersupply="current-shadow"]')
+      const voltageTextElement = document.querySelector('tspan[data-powersupply="voltage"]')
+      const voltageTextShadowElement = document.querySelector('tspan[data-powersupply="voltage-shadow"]')
+      return setInterval(() => {
+        const current = Math.trunc((0.9 + 0.1 * Math.random()) * 100) / 100
+        const voltage = Math.trunc((14.9 + 0.1 * Math.random()) * 100) / 100
+        currentTextElement.innerHTML = current
+        currentTextShadowElement.innerHTML = current
+        voltageTextElement.innerHTML = voltage
+        voltageTextShadowElement.innerHTML = voltage
+      }, 600)
+    }
   }
 }
 </script>
 
 <style>
-.igs-presentation-topics{
-  margin:10em 0 0 10em;
-  width: 85em;
-  align-items: center;
+.igs-presentation-svg > svg{
+  transform: translate(5em, 0);
+  width:100% !important;
+  transition: all .5s;
+  height: 100% !important;
+  z-index: 1;
   position: absolute;
-  text-align: justify;
+  opacity:0;
 }
+
+.igs-breakpoint-fusivel > .igs-svg-fusivel > svg,
+.igs-breakpoint-ampop > .igs-svg-ampop > svg,
+.igs-breakpoint-pcb2 > .igs-svg-pcb2 > svg,
+.igs-breakpoint-pcb1 > .igs-svg-pcb1 > svg,
+.igs-breakpoint-problemas > .igs-svg-problemas > svg,
+.igs-breakpoint-agradecimentos > .igs-svg-agradecimentos > svg,
+.igs-breakpoint-voltimetro > .igs-svg-voltimetro > svg,
+.igs-breakpoint-protoboard > .igs-svg-protoboard > svg,
+.igs-breakpoint-fonte > .igs-svg-fonte > svg,
+.igs-breakpoint-placa > .igs-svg-placa > svg,
+.igs-breakpoint-cover > .igs-svg-power-supply > svg{
+  width:100%;
+  transform: translate(0, 0);
+  position: absolute;
+  opacity: 1;
+  height: 100%;
+  background-size: contain;
+}
+.igs-breakpoint-cover > .igs-svg-cover > svg{
+  width:100% !important;
+  transform: translate(0, 0);
+  position: absolute;
+  opacity: 1;
+  height: 100% !important;
+  background-size: contain;
+}
+
+.igs-breakpoint-first > .igs-svg-power-supply > svg{
+  transition: all .5s;
+  position: absolute;
+  opacity:0;
+}
+.igs-breakpoint-first > .igs-svg-cover > svg{
+  opacity:0;
+  position: absolute;
+  z-index: 1;
+}
+
+.igs-svg-power-supply > svg{
+  transform: translate(62.78517870885em, -16.8232379315em);
+  width:100% !important;
+  height: 100% !important;
+  transition: all 1s;
+  z-index: 1;
+  position: absolute;
+  opacity:0;
+
+}
+.igs-svg-cover > svg{
+  transform: translate(5em, 0);
+  width:100% !important;
+  transition: all .5s;
+  height: 100% !important;
+  z-index: 1;
+  position: absolute;
+  opacity:0;
+}
+
+.igs-svg-cover > svg{
+  transform: translate(5em, 0);
+  width:100% !important;
+  transition: all .5s;
+  height: 100% !important;
+  z-index: 1;
+  position: absolute;
+  opacity:0;
+}
+
+.igs-presentation-svg.igs-svg-title > svg{
+  transform: translate(0, 0);
+  opacity:1;
+}
+.igs-breakpoint-first > .igs-svg.igs-svg-title > svg,
+.igs-breakpoint-cover > .igs-svg.igs-svg-title > svg{
+  transform: translate(5em, 0);
+  opacity:0;
+}
+
 .igs-presentation {
   z-index: 0;
   user-select: none;
-  background-color: #fffcdf;
   overflow: hidden;
   display:none;
 }

@@ -59,14 +59,15 @@ export default {
 }
 .igs-breakpoint-label {
   opacity:1;
-  color: #87101e;
+  color: #0035ca;
   display:block;
   transition: all .50s;
-  font-family: 'Merriweather', serif;
+  font-family: 'Josefin Sans SemiBold', serif;
   font-size: 3em;
   position: absolute;
   font-weight: 400;
-  margin:1em 0 0 3.3333em;
+  text-align: right;
+  margin:1.2em 3.3333em 0 0;
 }
 
 .igs-breakpoint-label-1,

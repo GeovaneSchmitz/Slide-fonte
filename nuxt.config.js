@@ -5,6 +5,9 @@ export default {
     port: 3000, // default: 3000
     host: '0.0.0.0' // default: localhost
   },
+  router: {
+    base: '/'
+  },
   /*
   ** Headers of the page
   */
@@ -17,7 +20,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Merriweather:300,400,300i,700&display=swap' }
+      { rel: 'stylesheet', href: 'resouces/JosefinSans/stylesheet.css' },
+      { rel: 'stylesheet', href: 'resouces/Digital7/stylesheet.css' }
     ]
   },
   /*
