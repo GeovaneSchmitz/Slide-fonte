@@ -1,7 +1,5 @@
-# slidehistoria
-
-> Uma apresentação
-
+# slide com Nuxt.js
+### [Demo](https://slidefonte.geovanems.com.br)
 ## Build Setup
 
 ``` bash
@@ -9,7 +7,7 @@
 $ yarn install
 
 # serve with hot reload at localhost:3000
-$ yarn dev
+$ yarn dev  
 
 # build for production and launch server
 $ yarn build
@@ -18,5 +16,6 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+###Referências
+[Nuxt.js docs](https://nuxtjs.org)
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
