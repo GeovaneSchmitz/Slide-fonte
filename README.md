@@ -16,6 +16,6 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-###Referências
+### Referências
 [Nuxt.js docs](https://nuxtjs.org)
 
