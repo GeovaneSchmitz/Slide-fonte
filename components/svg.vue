@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import svgs from '@/svgs.json'
+
 export default {
   props: {
     src: {
@@ -16,7 +18,7 @@ export default {
     }
   },
   mounted () {
-    fetch(this.src, {
+    /* fetch(this.src, {
       method: 'GET', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       credentials: 'include', // include, *same-origin, omit
@@ -29,11 +31,13 @@ export default {
     }).then((response) => {
       response.text().then((svg) => {
         this.svg = svg
+        console.log(this.src, svg)
       })
       if (response.status !== 200) {
         throw new Error(`STATUSCODE_${response.status}`)
       }
-    })
+    }) */
+    this.svg = svgs[this.src]
   },
   methods: {
   }

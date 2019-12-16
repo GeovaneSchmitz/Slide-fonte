@@ -20,8 +20,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' },
-      { rel: 'stylesheet', href: 'resouces/JosefinSans/stylesheet.css' },
-      { rel: 'stylesheet', href: 'resouces/Digital7/stylesheet.css' }
+      { rel: 'stylesheet', href: 'resouces/JosefinSans/stylesheet-base64.css' },
+      { rel: 'stylesheet', href: 'resouces/Digital7/stylesheet-base64.css' }
     ]
   },
   /*

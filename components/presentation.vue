@@ -24,24 +24,17 @@
       appCircuit(ref='circuitTransformador' wiresSrc="svg/transformador_wire.svg", componentsSrc="svg/transformador.svg")
       appSvg.igs-presentation-svg.igs-svg-transformador(src="svg/transformador.svg")
       appSvg.igs-presentation-svg.igs-svg-title(src="svg/title.svg")
-      appTitle
       appBreakpointLabel(:currentBreakpoint="currentBreakpoint")
-    .igs-presentation.igs-presentation-print(v-for="breakpoint in printBreakpoints", :class="`igs-breakpoint-${breakpoint.index}`")
-      appBackground
-      appTitle
-      appBreakpointLabel(:currentBreakpoint="breakpoint", :enabledTransition="false")
 </template>
 
 <script>
 import appBackground from '@/components/background.vue'
-import appTitle from '@/components/presentation-title.vue'
 import appCircuit from '@/components/circuit.vue'
 import appBreakpointLabel from '@/components/breakpoint-label.vue'
 import appSvg from '@/components/svg.vue'
 export default {
   components: {
     appBackground,
-    appTitle,
     appCircuit,
     appSvg,
     appBreakpointLabel
@@ -181,16 +174,15 @@ export default {
   opacity:0;
 }
 
-.igs-presentation-svg.igs-svg-title > svg{
-  transform: translate(0, 0);
-  opacity:1;
-}
 .igs-breakpoint-first > .igs-svg.igs-svg-title > svg,
 .igs-breakpoint-cover > .igs-svg.igs-svg-title > svg{
   transform: translate(5em, 0);
   opacity:0;
 }
-
+.igs-presentation-svg.igs-svg-title > svg{
+  transform: translate(0, 0);
+  opacity:1;
+}
 .igs-presentation {
   z-index: 0;
   user-select: none;

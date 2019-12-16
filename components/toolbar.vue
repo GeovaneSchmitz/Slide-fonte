@@ -1,5 +1,5 @@
 <template lang="pug">
-.igs-toolbar-wrapper(@touchstart="swipe" @touchend="swipe" @click="mouseClick($event)", @mousemove="mouseMove" :class="{'igs-toolbar-hide-cursor': !toolbarActive}")
+.igs-toolbar-wrapper(@click="mouseClick($event)", @mousemove="mouseMove" :class="{'igs-toolbar-hide-cursor': !toolbarActive}")
   .igs-toolbar(:class='{ "igs-toolbar-active": toolbarActive}', @pointerout="toolbarOut", @pointerover="toolbarOver", ref="toolbar")
     .igs-toolbar-button(@click="toolbarToPrevious()")
       |<
@@ -21,8 +21,7 @@ export default {
     return {
       timeoutHideToolbar: 1000,
       toolbarActive: false,
-      toolbarFocus: false,
-      swipeXpos: 0
+      toolbarFocus: false
     }
   },
   methods: {
@@ -41,21 +40,6 @@ export default {
         }
       }, this.timeoutHideToolbar)
     },
-    swipe (event) {
-      if (event.srcElement === this.$el) {
-        if (event.type === 'touchstart') {
-          this.swipeXpos = event.changedTouches[0].clientX
-        } else {
-          event.preventDefault()
-          const swipeXposEnd = event.changedTouches[0].clientX
-          if (swipeXposEnd < this.swipeXpos + 10) {
-            this.goToNextBreakpoint()
-          } else {
-            this.goToPreviousBreakpoint()
-          }
-        }
-      }
-    },
     toolbarToNext () {
       this.toolbarOut()
       this.goToNextBreakpoint()
@@ -69,7 +53,11 @@ export default {
         if (!this.toolbarFocus) {
           this.toolbarActive = false
         }
-        this.goToNextBreakpoint()
+        if (event.clientX > window.innerWidth / 2) {
+          this.goToNextBreakpoint()
+        } else {
+          this.goToPreviousBreakpoint()
+        }
       }
     },
     mouseMove () {

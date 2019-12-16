@@ -6,16 +6,19 @@ export default [
   },
   {
     index: 'cover',
-    label: 'Capa'
+    label: '1'
   },
   {
-    index: 'circuitTransformador'
+    index: 'circuitTransformador',
+    label: '2'
   },
   {
-    index: 'fusivel'
+    index: 'fusivel',
+    label: '3'
   },
   {
-    index: 'ampop'
+    index: 'ampop',
+    label: '4'
   },
   {
     index: 'circuitRetificacao',
@@ -48,7 +51,9 @@ export default [
     showLabel: true
   },
   {
-    index: 'voltimetro'
+    index: 'voltimetro',
+    label: '11'
+
   },
   {
     index: 'circuitPic',
@@ -61,18 +66,25 @@ export default [
     showLabel: true
   },
   {
-    index: 'placa'
+    index: 'placa',
+    label: '13'
   },
   {
-    index: 'fonte'
+    index: 'fonte',
+    label: '14'
   },
   {
-    index: 'protoboard'
+    index: 'protoboard',
+    label: '15'
   },
   {
-    index: 'problemas'
+    index: 'problemas',
+    label: '16'
+
   },
   {
-    index: 'agradecimentos'
+    index: 'agradecimentos',
+    label: '17'
+
   }
 ]
