@@ -543,15 +543,6 @@
     <linearGradient
        inkscape:collect="always"
        xlink:href="#linearGradient1179"
-       id="linearGradient1204"
-       x1="1392.2443"
-       y1="684.11346"
-       x2="1260.8202"
-       y2="510.16519"
-       gradientUnits="userSpaceOnUse" />
-    <linearGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient1179"
        id="linearGradient1253"
        gradientUnits="userSpaceOnUse"
        x1="1392.2443"
@@ -646,17 +637,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.11313709"
-     inkscape:cx="275.03202"
-     inkscape:cy="66.907571"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="186.0946"
+     inkscape:cy="418.00948"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="px"
-     inkscape:window-width="1360"
-     inkscape:window-height="708"
-     inkscape:window-x="0"
-     inkscape:window-y="28"
+     inkscape:window-width="1362"
+     inkscape:window-height="719"
+     inkscape:window-x="2"
+     inkscape:window-y="47"
      inkscape:window-maximized="1"
      showguides="true"
      inkscape:snap-bbox="true"
@@ -743,11 +734,5 @@
          id="tspan1089"
          x="862"
          y="506.91031" /></text>
-    <ellipse
-       r="100.40916"
-       cy="576.63324"
-       cx="1306.7333"
-       id="ellipse1208"
-       style="opacity:1;fill:url(#linearGradient1204);fill-opacity:1;stroke:#a1a1a1;stroke-width:1.51199996;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.16730036" />
   </g>
 </svg>
